@@ -1,0 +1,1481 @@
+/* ========================================
+   APOTEK HIDUP DIGITAL - Premium CSS
+   TOGA Herbal Medicine Education Website
+   ======================================== */
+
+/* === FONT IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ========================================
+   1. ROOT & RESET
+   ======================================== */
+:root {
+    --color-primary: #2E7D32;
+    --color-light-green: #66BB6A;
+    --color-lighter-green: #A5D6A7;
+    --color-pale-green: #E8F5E9;
+    --color-white: #FFFFFF;
+    --color-cream: #FFF8E1;
+    --color-wood-brown: #795548;
+    --color-dark: #1B5E20;
+    --color-text-dark: #212121;
+    --color-text-gray: #616161;
+    --gradient-main: linear-gradient(135deg, #1B5E20, #2E7D32, #43A047);
+    --radius-card: 16px;
+    --radius-button: 12px;
+    --radius-circle: 50%;
+    --shadow-soft: 0 4px 20px rgba(46, 125, 50, 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #FAFAFA;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ========================================
+   2. SCROLL PROGRESS BAR
+   ======================================== */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2E7D32, #66BB6A, #A5D6A7);
+    z-index: 10000;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* ========================================
+   3. FLOATING LEAVES (background decoration)
+   ======================================== */
+.floating-leaves-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-leaf {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.07;
+    animation: float-leaf linear infinite;
+}
+
+@keyframes float-leaf {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.07;
+    }
+    90% {
+        opacity: 0.07;
+    }
+    100% {
+        transform: translateY(-100px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   4. ANIMATED BACKGROUND BLOBS
+   ======================================== */
+.bg-blobs {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: blob-move infinite alternate ease-in-out;
+}
+
+@keyframes blob-move {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    100% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    right: -100px;
+    background: rgba(46, 125, 50, 0.04);
+    animation-duration: 20s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -50px;
+    left: -100px;
+    background: rgba(102, 187, 106, 0.04);
+    animation-duration: 25s;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    top: 40%;
+    left: 60%;
+    background: rgba(165, 214, 167, 0.04);
+    animation-duration: 22s;
+}
+
+/* ========================================
+   5. NAVBAR
+   ======================================== */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.navbar-scrolled .nav-logo {
+    color: #2E7D32;
+}
+
+.nav-logo .logo-icon {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.navbar-scrolled .nav-links a {
+    color: #333;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar-scrolled .nav-links a::after {
+    background: #2E7D32;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 60%;
+}
+
+.nav-links a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-scrolled .nav-links a:hover {
+    color: #2E7D32;
+    background: rgba(46, 125, 50, 0.06);
+}
+
+.nav-links a.active {
+    color: white;
+}
+
+.navbar-scrolled .nav-links a.active {
+    color: #2E7D32;
+}
+
+.sidebar-header,
+.nav-icon {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.navbar-scrolled .hamburger span {
+    background: #333;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ========================================
+   6. HERO SECTION
+   ======================================== */
+#beranda {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url(assets/images/hero-toga.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(27, 94, 32, 0.88), rgba(46, 125, 50, 0.75), rgba(67, 160, 71, 0.65));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 24px;
+    animation: heroFadeIn 1.2s ease-out;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 24px;
+    border-radius: 50px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 16px;
+    line-height: 1.1;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: white;
+    color: #2E7D32;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: #F1F8E9;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(12px);
+    }
+}
+
+/* ========================================
+   7. SECTION COMMON
+   ======================================== */
+.section {
+    padding: 100px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-cream {
+    background: linear-gradient(180deg, #FFFDE7, #FFF8E1);
+}
+
+.section-green {
+    background: linear-gradient(180deg, #E8F5E9, #F1F8E9);
+}
+
+.section-white {
+    background: #FFFFFF;
+}
+
+.section-light {
+    background: #FAFAFA;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    color: #2E7D32;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 16px;
+    line-height: 1.2;
+}
+
+.section-desc {
+    font-size: 1.05rem;
+    color: #616161;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   8. TANAMAN CARDS GRID
+   ======================================== */
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.plant-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.plant-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 21px;
+    padding: 2px;
+    background: linear-gradient(135deg, transparent, rgba(46, 125, 50, 0));
+    transition: all 0.4s;
+    z-index: 1;
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.plant-card:hover::before {
+    background: linear-gradient(135deg, #66BB6A, #2E7D32);
+}
+
+.plant-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 60px rgba(46, 125, 50, 0.2);
+}
+
+.plant-card-img-wrapper {
+    overflow: hidden;
+    height: 220px;
+    position: relative;
+}
+
+.plant-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plant-card:hover .plant-card-img {
+    transform: scale(1.1);
+}
+
+.plant-card-body {
+    padding: 24px;
+}
+
+.plant-card-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 8px;
+}
+
+.plant-card-desc {
+    font-size: 0.88rem;
+    color: #616161;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.plant-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2E7D32;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.plant-card-btn:hover {
+    gap: 12px;
+    color: #1B5E20;
+}
+
+.plant-card-btn .arrow {
+    transition: transform 0.3s;
+}
+
+.plant-card:hover .plant-card-btn .arrow {
+    transform: translateX(4px);
+}
+
+.ripple-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(46, 125, 50, 0.15);
+    transform: scale(0);
+    animation: ripple-effect 0.6s ease-out;
+}
+
+@keyframes ripple-effect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   9. MODAL
+   ======================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 24px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close:hover {
+    background: white;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+}
+
+.modal-body {
+    padding: 32px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 24px;
+}
+
+.modal-section {
+    margin-bottom: 24px;
+}
+
+.modal-section:last-child {
+    margin-bottom: 0;
+}
+
+.modal-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2E7D32;
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-section p {
+    font-size: 0.95rem;
+    color: #424242;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.modal-fact {
+    background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-left: 4px solid #2E7D32;
+}
+
+.modal-fact p {
+    font-style: italic;
+}
+
+/* ========================================
+   10. MANFAAT SECTION
+   ======================================== */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2E7D32, #66BB6A);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(46, 125, 50, 0.15);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.benefit-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 10px;
+}
+
+.benefit-card p {
+    font-size: 0.85rem;
+    color: #616161;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   11. OLAHAN SECTION
+   ======================================== */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(46, 125, 50, 0.18);
+}
+
+.recipe-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+}
+
+.recipe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.recipe-card:hover .recipe-img {
+    transform: scale(1.05);
+}
+
+.recipe-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(46, 125, 50, 0.9);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.recipe-body {
+    padding: 32px;
+    flex: 1;
+}
+
+.recipe-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 12px;
+}
+
+.recipe-desc {
+    font-size: 0.95rem;
+    color: #616161;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ========================================
+   12. PANDUAN PERAWATAN SECTION
+   ======================================== */
+.care-table-wrapper {
+    overflow-x: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background: white;
+    scrollbar-width: thin;
+    scrollbar-color: #C8E6C9 #F1F8E9;
+}
+
+.care-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.care-table-wrapper::-webkit-scrollbar-track {
+    background: #F1F8E9;
+    border-radius: 4px;
+}
+
+.care-table-wrapper::-webkit-scrollbar-thumb {
+    background: #C8E6C9;
+    border-radius: 4px;
+}
+
+.care-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.care-table thead {
+    background: linear-gradient(135deg, #1B5E20, #2E7D32);
+}
+
+.care-table th {
+    padding: 18px 24px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+.care-table th:first-child {
+    border-radius: 20px 0 0 0;
+}
+
+.care-table th:last-child {
+    border-radius: 0 20px 0 0;
+}
+
+.care-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid #E8F5E9;
+    font-size: 0.9rem;
+    color: #424242;
+    vertical-align: middle;
+}
+
+.care-table tr:last-child td {
+    border-bottom: none;
+}
+
+.care-table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.care-table tbody tr:hover td {
+    background: #F1F8E9;
+}
+
+.care-table .plant-name {
+    font-weight: 700;
+    color: #1B5E20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.care-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.care-badge.sun {
+    background: #FFF8E1;
+    color: #E65100;
+}
+
+.care-badge.water {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.care-badge.soil {
+    background: #F1F8E9;
+    color: #2E7D32;
+}
+
+.care-cards-mobile {
+    display: none;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.care-card-mobile {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.care-card-mobile h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.care-card-mobile .care-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.care-card-mobile .care-info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ========================================
+   13. TIPS SECTION
+   ======================================== */
+.tips-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tips-content {
+    padding-right: 0;
+}
+
+.tips-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 20px;
+    line-height: 1.3;
+}
+
+.tips-content p {
+    font-size: 1rem;
+    color: #424242;
+    line-height: 1.8;
+    margin: 0 0 24px;
+}
+
+.tips-img-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+}
+
+.tips-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.tips-img-wrapper:hover .tips-img {
+    transform: scale(1.03);
+}
+
+.tips-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+    border-radius: 16px;
+    border: 1px solid #C8E6C9;
+}
+
+.tips-feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tips-feature-text h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1B5E20;
+    margin: 0 0 4px;
+}
+
+.tips-feature-text p {
+    font-size: 0.88rem;
+    margin: 0;
+    color: #616161;
+}
+
+/* ========================================
+   14. FOOTER
+   ======================================== */
+footer {
+    background: linear-gradient(135deg, #1B5E20, #2E7D32, #1B5E20);
+    color: white;
+    padding: 48px 24px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 32px;
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin-bottom: 24px;
+}
+
+.footer-copy {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+/* ========================================
+   15. SCROLL ANIMATIONS
+   ======================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-zoom {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-zoom.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ========================================
+   16. UTILITY
+   ======================================== */
+.text-gradient {
+    background: linear-gradient(135deg, #2E7D32, #66BB6A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img[data-src].loaded,
+img:not([data-src]) {
+    opacity: 1;
+}
+
+/* ========================================
+   MOBILE OVERLAY (base - hidden by default)
+   ======================================== */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   17. RESPONSIVE
+   ======================================== */
+
+/* --- 1200px breakpoint --- */
+@media (max-width: 1200px) {
+    .plants-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- 1024px breakpoint --- */
+@media (max-width: 1024px) {
+    .plants-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-content {
+        padding-right: 0;
+        margin-bottom: 32px;
+    }
+}
+
+/* --- 768px breakpoint --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 40px 24px;
+        box-shadow: -10px 0 40px rgba(27, 94, 32, 0.1);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 32px 0 0 32px;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 8px;
+        transform: translateX(100%);
+        align-items: flex-start;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 32px;
+        margin-top: 40px;
+        padding-left: 16px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        width: 100%;
+        border-bottom: 2px solid var(--color-pale-green);
+        padding-bottom: 16px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text-gray);
+        border-radius: 16px;
+        transition: var(--transition-smooth);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: var(--color-pale-green);
+        color: var(--color-primary);
+        transform: translateX(5px);
+    }
+
+    .nav-icon {
+        display: inline-block;
+        margin-right: 16px;
+        font-size: 1.3rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .plants-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section {
+        padding: 64px 16px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .care-table-wrapper {
+        display: none;
+    }
+
+    .care-cards-mobile {
+        display: grid;
+    }
+
+    .modal-img {
+        height: 220px;
+    }
+
+    .modal-body {
+        padding: 24px;
+    }
+}
+
+/* --- 480px breakpoint --- */
+@media (max-width: 480px) {
+    .plants-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .modal-content {
+        margin: 8px;
+        border-radius: 16px;
+    }
+
+    .modal-img {
+        height: 180px;
+    }
+
+    .recipes-grid {
+        gap: 20px;
+    }
+
+    .recipe-img-wrapper {
+        height: 200px;
+    }
+}

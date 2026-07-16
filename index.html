@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>Kebun TOGA Anti Hipertensi</title>
+    <meta name="description"
+        content="Panduan lengkap manfaat, olahan sehat, dan perawatan Tanaman Obat Keluarga (TOGA) untuk membantu menjaga tekanan darah tetap stabil pada penderita hipertensi.">
+    <meta name="keywords"
+        content="TOGA, tanaman obat, herbal, hipertensi, tekanan darah, seledri, bawang putih, rosella, kemangi, sereh">
+    <meta name="author" content="Kebun TOGA Anti Hipertensi">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kebun TOGA Anti Hipertensi">
+    <meta property="og:description"
+        content="Panduan lengkap manfaat, olahan sehat, dan perawatan Tanaman Obat Keluarga (TOGA) untuk membantu menjaga tekanan darah tetap stabil.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero-toga.jpg">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>"
+        type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body>
+
+    <!-- ============================================ -->
+    <!-- SCROLL PROGRESS BAR                          -->
+    <!-- ============================================ -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- FLOATING LEAVES BACKGROUND                   -->
+    <!-- ============================================ -->
+    <div class="floating-leaves-container" aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- ANIMATED BACKGROUND BLOBS                    -->
+    <!-- ============================================ -->
+    <div class="bg-blobs" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- MOBILE OVERLAY                               -->
+    <!-- ============================================ -->
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+    <!-- ============================================ -->
+    <!-- NAVBAR                                       -->
+    <!-- ============================================ -->
+    <nav id="navbar" role="navigation" aria-label="Menu utama">
+        <div class="nav-container">
+            <a href="#beranda" class="nav-logo" aria-label="Kebun TOGA Anti Hipertensi - Beranda">
+                <span class="logo-icon">🌿</span>
+                <span>Kebun TOGA Anti Hipertensi</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <div class="sidebar-header">
+                    <span class="logo-icon">🌿</span>
+                    <span>Menu Utama</span>
+                </div>
+                <li><a href="#beranda" class="active"><span class="nav-icon">🏠</span>Beranda</a></li>
+                <li><a href="#tanaman"><span class="nav-icon">🪴</span>Tanaman TOGA</a></li>
+                <li><a href="#manfaat"><span class="nav-icon">✨</span>Manfaat</a></li>
+                <li><a href="#olahan"><span class="nav-icon">🍲</span>Olahan Sehat</a></li>
+                <li><a href="#panduan"><span class="nav-icon">📖</span>Panduan Perawatan</a></li>
+                <li><a href="#tips"><span class="nav-icon">💡</span>Tips</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION                                 -->
+    <!-- ============================================ -->
+    <section id="beranda" class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <span class="hero-badge">🌱 Untuk Penderita Hipertensi</span>
+            <h1 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">Kebun TOGA<br>Anti Hipertensi</h1>
+            <p class="hero-subtitle">Berikut adalah versi ringkas yang berfokus pada hipertensi beserta inspirasi olahan sehatnya.</p>
+            <div class="hero-buttons">
+                <a href="#tanaman" class="btn-primary">
+                    <span>🌿</span> Jelajahi Tanaman
+                </a>
+                <a href="#manfaat" class="btn-secondary">
+                    <span>📖</span> Mulai Belajar
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator" aria-hidden="true">
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: TANAMAN TOGA                        -->
+    <!-- ============================================ -->
+    <section id="tanaman" class="section section-light">
+        <div class="container">
+            <header class="section-header reveal">
+                <span class="section-badge">🌿 Koleksi Tanaman</span>
+                <h2 class="section-title">Tanaman TOGA untuk Hipertensi</h2>
+                <p class="section-desc">Lima tanaman obat keluarga yang telah terbukti memiliki khasiat membantu menjaga
+                    tekanan darah tetap stabil.</p>
+            </header>
+
+            <div class="plants-grid">
+                <!-- Card 1: Seledri -->
+                <article class="plant-card reveal" data-plant="0" tabindex="0" role="button"
+                    aria-label="Lihat detail Seledri">
+                    <div class="ripple-container"></div>
+                    <div class="plant-card-img-wrapper">
+                        <img data-src="assets/images/seledri.jpg"
+                            alt="Tanaman Seledri - mengandung phthalides untuk menurunkan tekanan darah"
+                            class="plant-card-img" width="400" height="220" loading="lazy">
+                    </div>
+                    <div class="plant-card-body">
+                        <h3 class="plant-card-name">Seledri</h3>
+                        <p class="plant-card-desc">Mengandung phthalides yang mengendurkan pembuluh darah, sehingga
+                            aliran darah lebih lancar.</p>
+                        <button class="plant-card-btn" aria-label="Lihat detail Seledri">
+                            Lihat Detail <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Card 2: Bawang Putih Tunggal -->
+                <article class="plant-card reveal" data-plant="1" tabindex="0" role="button"
+                    aria-label="Lihat detail Bawang Putih Tunggal">
+                    <div class="ripple-container"></div>
+                    <div class="plant-card-img-wrapper">
+                        <img data-src="assets/images/bawang-putih.jpg?v=2"
+                            alt="Bawang Putih Tunggal - kaya allicin untuk melebarkan pembuluh darah"
+                            class="plant-card-img" width="400" height="220" loading="lazy">
+                    </div>
+                    <div class="plant-card-body">
+                        <h3 class="plant-card-name">Bawang Putih Tunggal</h3>
+                        <p class="plant-card-desc">Kaya allicin untuk melebarkan pembuluh darah dan mencegah kekakuan
+                            nadi.</p>
+                        <button class="plant-card-btn" aria-label="Lihat detail Bawang Putih Tunggal">
+                            Lihat Detail <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Card 3: Rosella -->
+                <article class="plant-card reveal" data-plant="2" tabindex="0" role="button"
+                    aria-label="Lihat detail Rosella">
+                    <div class="ripple-container"></div>
+                    <div class="plant-card-img-wrapper">
+                        <img data-src="assets/images/rosella.jpg"
+                            alt="Bunga Rosella - diuretik alami untuk menurunkan tekanan darah" class="plant-card-img"
+                            width="400" height="220" loading="lazy">
+                    </div>
+                    <div class="plant-card-body">
+                        <h3 class="plant-card-name">Rosella</h3>
+                        <p class="plant-card-desc">Bersifat diuretik alami; sangat efektif menurunkan tekanan darah
+                            sistolik dan diastolik.</p>
+                        <button class="plant-card-btn" aria-label="Lihat detail Rosella">
+                            Lihat Detail <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Card 4: Kemangi -->
+                <article class="plant-card reveal" data-plant="3" tabindex="0" role="button"
+                    aria-label="Lihat detail Kemangi">
+                    <div class="ripple-container"></div>
+                    <div class="plant-card-img-wrapper">
+                        <img data-src="assets/images/kemangi.jpg?v=2"
+                            alt="Tanaman Kemangi - mengandung eugenol untuk merilekskan pembuluh darah"
+                            class="plant-card-img" width="400" height="220" loading="lazy">
+                    </div>
+                    <div class="plant-card-body">
+                        <h3 class="plant-card-name">Kemangi</h3>
+                        <p class="plant-card-desc">Mengandung eugenol yang bekerja memblokir saluran kalsium untuk
+                            merilekskan pembuluh darah.</p>
+                        <button class="plant-card-btn" aria-label="Lihat detail Kemangi">
+                            Lihat Detail <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Card 5: Sereh -->
+                <article class="plant-card reveal" data-plant="4" tabindex="0" role="button"
+                    aria-label="Lihat detail Sereh">
+                    <div class="ripple-container"></div>
+                    <div class="plant-card-img-wrapper">
+                        <img data-src="assets/images/sereh.jpg"
+                            alt="Tanaman Sereh - membantu membuang kelebihan natrium untuk menurunkan tekanan darah"
+                            class="plant-card-img" width="400" height="220" loading="lazy">
+                    </div>
+                    <div class="plant-card-body">
+                        <h3 class="plant-card-name">Sereh</h3>
+                        <p class="plant-card-desc">Membantu ginjal membuang kelebihan garam (natrium) melalui urine,
+                            sehingga beban pembuluh darah menurun.</p>
+                        <button class="plant-card-btn" aria-label="Lihat detail Sereh">
+                            Lihat Detail <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PLANT DETAIL MODAL                           -->
+    <!-- ============================================ -->
+    <div class="modal-overlay" id="plant-modal" role="dialog" aria-modal="true" aria-label="Detail Tanaman">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Tutup modal">&times;</button>
+            <img class="modal-img" src="" alt="" loading="lazy">
+            <div class="modal-body">
+                <h3 class="modal-title"></h3>
+
+                <div class="modal-section">
+                    <h4>🌿 Manfaat Utama</h4>
+                    <p class="modal-benefit"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>⚙️ Cara Kerja</h4>
+                    <p class="modal-mechanism"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h4>💡 Fakta Menarik</h4>
+                    <div class="modal-fact">
+                        <p class="modal-fact-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION: MANFAAT                             -->
+    <!-- ============================================ -->
+    <section id="manfaat" class="section section-cream">
+        <div class="container">
+            <header class="section-header reveal">
+                <span class="section-badge">💚 Khasiat Herbal</span>
+                <h2 class="section-title">Manfaat TOGA untuk Hipertensi</h2>
+                <p class="section-desc">Setiap tanaman memiliki mekanisme kerja yang unik dalam membantu menurunkan dan
+                    menstabilkan tekanan darah.</p>
+            </header>
+
+            <div class="benefits-grid">
+                <!-- Benefit 1: Seledri -->
+                <article class="benefit-card reveal">
+                    <div class="benefit-icon" aria-hidden="true">🥬</div>
+                    <h3>Seledri</h3>
+                    <p>Mengandung phthalides yang mengendurkan pembuluh darah, sehingga aliran darah lebih lancar.</p>
+                </article>
+
+                <!-- Benefit 2: Bawang Putih Tunggal -->
+                <article class="benefit-card reveal">
+                    <div class="benefit-icon" aria-hidden="true">🧄</div>
+                    <h3>Bawang Putih Tunggal</h3>
+                    <p>Kaya allicin untuk melebarkan pembuluh darah dan mencegah kekakuan nadi.</p>
+                </article>
+
+                <!-- Benefit 3: Rosella -->
+                <article class="benefit-card reveal">
+                    <div class="benefit-icon" aria-hidden="true">🌺</div>
+                    <h3>Rosella</h3>
+                    <p>Bersifat diuretik alami; sangat efektif menurunkan tekanan darah sistolik dan diastolik.</p>
+                </article>
+
+                <!-- Benefit 4: Kemangi -->
+                <article class="benefit-card reveal">
+                    <div class="benefit-icon" aria-hidden="true">🌱</div>
+                    <h3>Kemangi</h3>
+                    <p>Mengandung eugenol yang bekerja memblokir saluran kalsium untuk merilekskan pembuluh darah.</p>
+                </article>
+
+                <!-- Benefit 5: Sereh -->
+                <article class="benefit-card reveal">
+                    <div class="benefit-icon" aria-hidden="true">🌾</div>
+                    <h3>Sereh</h3>
+                    <p>Membantu ginjal membuang kelebihan garam (natrium) melalui urine, sehingga beban pembuluh darah
+                        menurun.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: OLAHAN SEHAT                        -->
+    <!-- ============================================ -->
+    <section id="olahan" class="section section-white">
+        <div class="container">
+            <header class="section-header reveal">
+                <span class="section-badge">🍵 Resep Alami</span>
+                <h2 class="section-title">Inspirasi Olahan Sehat Penurun Tensi</h2>
+                <p class="section-desc">Dua olahan berbahan dasar tanaman TOGA yang nikmat dikonsumsi sehari-hari untuk
+                    membantu menstabilkan tekanan darah.</p>
+            </header>
+
+            <div class="recipes-grid">
+                <!-- Recipe 1: Black Garlic -->
+                <article class="recipe-card reveal-left">
+                    <div class="recipe-img-wrapper">
+                        <img data-src="assets/images/black-garlic.jpg"
+                            alt="Black Garlic - bawang putih tunggal fermentasi untuk kesehatan jantung"
+                            class="recipe-img" width="600" height="280" loading="lazy">
+                        <span class="recipe-badge">🧄 Fermentasi</span>
+                    </div>
+                    <div class="recipe-body">
+                        <h3 class="recipe-title">Black Garlic</h3>
+                        <p class="recipe-desc">Bawang putih tunggal yang melalui proses fermentasi akan berubah warna
+                            menjadi hitam dengan tekstur kenyal dan rasa manis-asam. Proses ini melipatgandakan
+                            kandungan antioksidannya, menjadikannya jauh lebih ampuh untuk menstabilkan tekanan darah
+                            dan menyehatkan jantung tanpa meninggalkan bau menyengat.</p>
+                    </div>
+                </article>
+
+                <!-- Recipe 2: Teh Rosella -->
+                <article class="recipe-card reveal-right">
+                    <div class="recipe-img-wrapper">
+                        <img data-src="assets/images/teh-rosella.jpg"
+                            alt="Teh Rosella - seduhan herbal kaya vitamin C untuk menurunkan tensi" class="recipe-img"
+                            width="600" height="280" loading="lazy">
+                        <span class="recipe-badge">🌺 Seduhan Herbal</span>
+                    </div>
+                    <div class="recipe-body">
+                        <h3 class="recipe-title">Teh Rosella</h3>
+                        <p class="recipe-desc">Dibuat dari kelopak bunga rosella yang dikeringkan. Seduhan teh berwarna
+                            merah merona ini tidak hanya menyegarkan, tetapi juga berfungsi sebagai peluruh kencing
+                            (diuretik) alami yang nikmat untuk membantu menurunkan tensi serta memberikan asupan Vitamin
+                            C yang tinggi.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: PANDUAN PERAWATAN                   -->
+    <!-- ============================================ -->
+    <section id="panduan" class="section section-green">
+        <div class="container">
+            <header class="section-header reveal">
+                <span class="section-badge">💧 Panduan Praktis</span>
+                <h2 class="section-title">Panduan Perawatan Ringkas</h2>
+                <p class="section-desc">Informasi kebutuhan cahaya, penyiraman, dan media tanam untuk masing-masing
+                    tanaman TOGA.</p>
+            </header>
+
+            <!-- Desktop/Tablet Table -->
+            <div class="care-table-wrapper reveal">
+                <table class="care-table" role="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">🌱 Tanaman</th>
+                            <th scope="col">☀️ Kebutuhan Cahaya</th>
+                            <th scope="col">💧 Penyiraman</th>
+                            <th scope="col">🌍 Media Tanam &amp; Perawatan Khusus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="plant-name">🥬 Seledri</span></td>
+                            <td><span class="care-badge sun">☀️ Teduh sebagian</span></td>
+                            <td><span class="care-badge water">💧 Lembap (tidak becek)</span></td>
+                            <td><span class="care-badge soil">🌱 Tanah gembur berhumus</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="plant-name">🧄 Bawang Putih Tunggal</span></td>
+                            <td><span class="care-badge sun">☀️ Penuh (Full sun)</span></td>
+                            <td><span class="care-badge water">💧 Sedang (hindari genangan air)</span></td>
+                            <td><span class="care-badge soil">🌱 Tanah berpasir, drainase lancar</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="plant-name">🌺 Rosella</span></td>
+                            <td><span class="care-badge sun">☀️ Penuh (Full sun)</span></td>
+                            <td><span class="care-badge water">💧 Rutin (1-2x sehari)</span></td>
+                            <td><span class="care-badge soil">🌱 Tanah dicampur kompos organik</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="plant-name">🌱 Kemangi</span></td>
+                            <td><span class="care-badge sun">☀️ Parsial hingga Penuh</span></td>
+                            <td><span class="care-badge water">💧 Tinggi (siram setiap hari)</span></td>
+                            <td><span class="care-badge soil">🌱 Rajin pangkas pucuk agar daun lebat</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="plant-name">🌾 Sereh</span></td>
+                            <td><span class="care-badge sun">☀️ Penuh (Full sun)</span></td>
+                            <td><span class="care-badge water">💧 Sedang (tahan kering)</span></td>
+                            <td><span class="care-badge soil">🌱 Toleran di berbagai tanah; pecah rumpun jika
+                                    padat</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Cards (hidden on desktop) -->
+            <div class="care-cards-mobile">
+                <article class="care-card-mobile reveal">
+                    <h3>🥬 Seledri</h3>
+                    <div class="care-info">
+                        <div class="care-info-item">
+                            <span class="care-badge sun">☀️ Teduh sebagian</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge water">💧 Lembap (tidak becek)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge soil">🌱 Tanah gembur berhumus</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="care-card-mobile reveal">
+                    <h3>🧄 Bawang Putih Tunggal</h3>
+                    <div class="care-info">
+                        <div class="care-info-item">
+                            <span class="care-badge sun">☀️ Penuh (Full sun)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge water">💧 Sedang (hindari genangan air)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge soil">🌱 Tanah berpasir, drainase lancar</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="care-card-mobile reveal">
+                    <h3>🌺 Rosella</h3>
+                    <div class="care-info">
+                        <div class="care-info-item">
+                            <span class="care-badge sun">☀️ Penuh (Full sun)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge water">💧 Rutin (1-2x sehari)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge soil">🌱 Tanah dicampur kompos organik</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="care-card-mobile reveal">
+                    <h3>🌱 Kemangi</h3>
+                    <div class="care-info">
+                        <div class="care-info-item">
+                            <span class="care-badge sun">☀️ Parsial hingga Penuh</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge water">💧 Tinggi (siram setiap hari)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge soil">🌱 Rajin pangkas pucuk agar daun lebat</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="care-card-mobile reveal">
+                    <h3>🌾 Sereh</h3>
+                    <div class="care-info">
+                        <div class="care-info-item">
+                            <span class="care-badge sun">☀️ Penuh (Full sun)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge water">💧 Sedang (tahan kering)</span>
+                        </div>
+                        <div class="care-info-item">
+                            <span class="care-badge soil">🌱 Toleran di berbagai tanah; pecah rumpun jika padat</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION: TIPS EKSTRA                         -->
+    <!-- ============================================ -->
+    <section id="tips" class="section section-cream">
+        <div class="container">
+            <header class="section-header reveal">
+                <span class="section-badge">💡 Tips Cerdas</span>
+                <h2 class="section-title">Tip Ekstra: Irigasi Pintar</h2>
+                <p class="section-desc">Teknologi modern untuk perawatan tanaman TOGA yang lebih efisien dan optimal.
+                </p>
+            </header>
+
+            <div class="tips-container">
+                <div class="tips-content reveal-left">
+                    <h3>Sistem Penyiraman Otomatis</h3>
+                    <p>Untuk skala lahan pertanian terpadu atau pedesaan, integrasikan sistem penyiraman otomatis. Sistem ini memastikan tanah tetap pada tingkat kelembapan ideal tanpa perlu penyiraman manual setiap hari.</p>
+                    <p>Sistem ini menggunakan pengaturan <strong>katup air mancur</strong> dan <strong>katup sprayer tanaman</strong> yang berfungsi sebagai pengarah aliran air. Aliran air ini hanya bisa dipilih salah satu saja, jika katup air mancur <strong>ON</strong>, maka katup sprayer tanaman akan <strong>OFF</strong>, dan begitu pula sebaliknya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span>🌿</span>
+                <span>Kebun TOGA<br>Anti Hipertensi</span>
+            </div>
+            <p class="footer-desc">Panduan lengkap manfaat, olahan sehat, dan perawatan Tanaman Obat Keluarga (TOGA)
+                untuk membantu menjaga tekanan darah tetap stabil pada penderita hipertensi.</p>
+
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#beranda">Beranda</a>
+                <a href="#tanaman">Tanaman TOGA</a>
+                <a href="#manfaat">Manfaat</a>
+                <a href="#olahan">Olahan Sehat</a>
+                <a href="#panduan">Panduan</a>
+                <a href="#tips">Tips</a>
+            </nav>
+
+            <div class="footer-divider"></div>
+            <p class="footer-copy">&copy; 2026 Kebun TOGA Anti Hipertensi. Seluruh informasi bersumber dari panduan TOGA untuk
+                hipertensi.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
