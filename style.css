@@ -113,8 +113,8 @@ img {
 .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
     animation: blob-move infinite alternate ease-in-out;
+    will-change: transform;
 }
 
 @keyframes blob-move {
@@ -134,7 +134,7 @@ img {
     height: 500px;
     top: -100px;
     right: -100px;
-    background: rgba(46, 125, 50, 0.04);
+    background: radial-gradient(circle, rgba(46, 125, 50, 0.1) 0%, rgba(46, 125, 50, 0) 70%);
     animation-duration: 20s;
 }
 
@@ -143,7 +143,7 @@ img {
     height: 400px;
     bottom: -50px;
     left: -100px;
-    background: rgba(102, 187, 106, 0.04);
+    background: radial-gradient(circle, rgba(102, 187, 106, 0.1) 0%, rgba(102, 187, 106, 0) 70%);
     animation-duration: 25s;
 }
 
@@ -152,7 +152,7 @@ img {
     height: 350px;
     top: 40%;
     left: 60%;
-    background: rgba(165, 214, 167, 0.04);
+    background: radial-gradient(circle, rgba(165, 214, 167, 0.1) 0%, rgba(165, 214, 167, 0) 70%);
     animation-duration: 22s;
 }
 
