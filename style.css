@@ -1069,6 +1069,107 @@ img {
 }
 
 /* ========================================
+   12.5 TERAPI SECTION
+   ======================================== */
+.therapy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.therapy-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.therapy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.therapy-card.highlight {
+    background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+    border: 1px solid #C8E6C9;
+}
+
+.therapy-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: #F1F8E9;
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 16px;
+    color: #2E7D32;
+}
+
+.therapy-card.highlight .therapy-icon {
+    background: white;
+}
+
+.therapy-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 16px;
+}
+
+.therapy-subtitle {
+    font-size: 1rem;
+    color: #424242;
+    margin: 0 0 16px;
+    line-height: 1.6;
+}
+
+.therapy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.therapy-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 16px;
+    color: #424242;
+    line-height: 1.6;
+}
+
+.therapy-list li:last-child {
+    margin-bottom: 0;
+}
+
+.therapy-list li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1rem;
+}
+
+.therapy-card.highlight .therapy-list li::before {
+    content: '📌';
+}
+
+@media (max-width: 768px) {
+    .therapy-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .therapy-card {
+        padding: 24px;
+    }
+}
+
+/* ========================================
    13. TIPS SECTION
    ======================================== */
 .tips-container {
