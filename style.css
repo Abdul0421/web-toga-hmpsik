@@ -521,6 +521,7 @@ img {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.7;
+    text-align: justify;
 }
 
 .container {
@@ -604,6 +605,7 @@ img {
     color: #616161;
     line-height: 1.6;
     margin: 0 0 16px;
+    text-align: justify;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -851,6 +853,7 @@ img {
     color: #616161;
     line-height: 1.6;
     margin: 0;
+    text-align: justify;
 }
 
 /* ========================================
@@ -924,6 +927,7 @@ img {
     color: #616161;
     line-height: 1.8;
     margin: 0;
+    text-align: justify;
 }
 .recipe-nutrition {
     background: #FAFAFA;
@@ -947,6 +951,7 @@ img {
     color: #424242;
     font-size: 0.95rem;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .nutrition-list {
@@ -962,6 +967,7 @@ img {
     color: #424242;
     font-size: 0.95rem;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .nutrition-list li:last-child {
@@ -1179,6 +1185,7 @@ img {
     color: #424242;
     margin: 0 0 16px;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .therapy-list {
@@ -1193,6 +1200,7 @@ img {
     margin-bottom: 16px;
     color: #424242;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .therapy-list li:last-child {
@@ -1247,6 +1255,7 @@ img {
     color: #424242;
     line-height: 1.8;
     margin: 0 0 24px;
+    text-align: justify;
 }
 
 .tips-img-wrapper {
@@ -1299,6 +1308,7 @@ img {
     font-size: 0.88rem;
     margin: 0;
     color: #616161;
+    text-align: justify;
 }
 
 /* ========================================
