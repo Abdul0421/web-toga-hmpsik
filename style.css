@@ -947,6 +947,7 @@ img {
     color: #424242;
     font-size: 0.95rem;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .nutrition-list {
@@ -962,6 +963,7 @@ img {
     color: #424242;
     font-size: 0.95rem;
     line-height: 1.6;
+    text-align: justify;
 }
 
 .nutrition-list li:last-child {
